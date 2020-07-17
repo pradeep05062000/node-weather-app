@@ -19,6 +19,11 @@ weatherForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const location = search.value;
+	weather.textContent = 'Loading...';
+	temperature.textContent = '';
+	description.textContent = '';
+	cityName.textContent = '';
+	country.textContent = '';
 	
 	fetch('http://127.0.0.1:3000/weather?address='+location).then((response) => {
 		response.json().then((data) => {
